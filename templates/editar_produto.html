@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Produto - SuperOfertas RN{% endblock %}
+
+{% block content %}
+  <section class="edit-produto-container">
+    <h2>✏️ Editar Produto</h2>
+
+    <form method="POST" action="{{ url_for('routes.atualizar_produto', id=produto.id) }}" class="edit-form">
+      <div class="form-group">
+        <label for="nome">🛍️ Nome do Produto</label>
+        <input type="text" id="nome" name="nome" value="{{ produto.nome }}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="descricao">📝 Descrição</label>
+        <textarea id="descricao" name="descricao" rows="4">{{ produto.descricao }}</textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="imagem_url">🖼️ URL da Imagem</label>
+        <input type="text" id="imagem_url" name="imagem_url" value="{{ produto.imagem_url }}">
+      </div>
+
+      <div class="form-group destaque">
+        <label>
+          <input type="checkbox" name="destaque" {% if produto.destaque %}checked{% endif %}>
+          🚀 Produto em destaque
+        </label>
+      </div>
+
+      <button type="submit" class="cta-button">💾 Salvar Alterações</button>
+    </form>
+  </section>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}DESCONTOS & ACHADINHOS VIP - Ofertas Oficiais e Cupons Exclusivos{% endblock %}
+
+{% block content %}
+
+  <!-- Seção de boas-vindas -->
+  <section class="welcome">
+    <h1>💰 Bem-vindo ao DESCONTOS & ACHADINHOS VIP!</h1>
+    <p>Receba diariamente ofertas das maiores plataformas — Mercado Livre, Amazon, Magalu — com cupons e descontos exclusivos.</p>
+    <a class="cta-button pulse" href="https://chat.whatsapp.com/IVGN98jifhM3SfIJWXm4Hr" target="_blank">
+      ✅ Entrar no grupo VIP do WhatsApp
+    </a>
+  </section>
+
+  <!-- Seção de produtos em destaque -->
+  <section class="highlight">
+    <h2>🔥 Produtos em Destaque de Hoje</h2>
+    <div class="grid">
+      {% for produto in produtos_destaque %}
+      <a href="https://chat.whatsapp.com/IVGN98jifhM3SfIJWXm4Hr" target="_blank" class="item-link">
+        <div class="item card-fixo">
+          <img src="{{ produto.imagem_url or 'https://via.placeholder.com/200x200?text=Produto' }}" alt="{{ produto.nome }}">
+          <h3>{{ produto.nome }}</h3>
+          <p>{{ produto.descricao or 'Descrição indisponível.' }}</p>
+        </div>
+      </a>
+      {% else %}
+      <p style="color:red;">Nenhum produto em destaque encontrado.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Seção de mais produtos -->
+  <section class="more-products">
+    <h2>🛍️ Mais Ofertas Selecionadas</h2>
+    <div class="grid">
+      {% for produto in ofertas_extras %}
+      <a href="https://chat.whatsapp.com/IVGN98jifhM3SfIJWXm4Hr" target="_blank" class="item-link">
+        <div class="item card-fixo">
+          <img src="{{ produto.imagem_url or 'https://via.placeholder.com/200x200?text=Oferta' }}" alt="{{ produto.nome }}">
+          <h3>{{ produto.nome }}</h3>
+          <p>{{ produto.descricao or 'Descrição indisponível.' }}</p>
+        </div>
+      </a>
+      {% else %}
+      <p style="color:red;">Nenhuma oferta extra cadastrada.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Seção final de chamada -->
+  <section class="join-now">
+    <h2>🎁 Cupons, Ofertas e Links Oficiais no WhatsApp!</h2>
+    <p>Receba tudo isso todos os dias e economize com nossos parceiros afiliados!</p>
+    <a class="cta-button pulse" href="https://chat.whatsapp.com/IVGN98jifhM3SfIJWXm4Hr" target="_blank">
+      👉 Entrar no grupo VIP agora
+    </a>
+  </section>
+
+{% endblock %}

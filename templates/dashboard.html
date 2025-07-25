@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Painel Administrativo - SuperOfertas RN{% endblock %}
+
+{% block content %}
+  <section class="welcome edit-produto-container">
+    <h1>📋 Painel Administrativo</h1>
+    <p>Bem-vindo, <strong>admin</strong>! Gerencie seus produtos em destaque e ofertas extras com facilidade.</p>
+  </section>
+
+  {% if current_user.is_authenticated %}
+  <div class="dashboard-button-container">
+    <a href="{{ url_for('routes.novo_produto') }}" class="cta-button">
+      ➕ Cadastrar Novo Produto
+    </a>
+  </div>
+  {% endif %}
+
+  <!-- Seção de produtos em destaque -->
+  <section class="highlight">
+    <h2>🔥 Editar Produtos em Destaque</h2>
+    <div class="grid">
+      {% for produto in produtos_destaque %}
+      <div class="item card-dashboard">
+        <img src="{{ produto.imagem_url or 'https://via.placeholder.com/200x200?text=Produto' }}" alt="{{ produto.nome }}">
+        <h3>{{ produto.nome }}</h3>
+        <p>{{ produto.descricao or 'Cadastre ou atualize as informações deste produto.' }}</p>
+        <a class="cta-button" href="{{ url_for('routes.editar_produto', id=produto.id) }}">Editar {{ produto.nome }}</a>
+      </div>
+      {% else %}
+      <p style="color: red;">Nenhum produto em destaque encontrado.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Seção de mais ofertas -->
+  <section class="highlight">
+    <h2>🧃 Editar Ofertas Extras</h2>
+    <div class="grid">
+      {% for produto in ofertas_extras %}
+      <div class="item card-dashboard">
+        <img src="{{ produto.imagem_url or 'https://via.placeholder.com/200x200?text=Oferta' }}" alt="{{ produto.nome }}">
+        <h3>{{ produto.nome }}</h3>
+        <p>{{ produto.descricao or 'Cadastre ou atualize esta oferta adicional.' }}</p>
+        <a class="cta-button" href="{{ url_for('routes.editar_produto', id=produto.id) }}">Editar {{ produto.nome }}</a>
+      </div>
+      {% else %}
+      <p style="color: red;">Nenhuma oferta extra cadastrada.</p>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

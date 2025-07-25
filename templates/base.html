@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}DESCONTOS & ACHADINHOS VIP{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="site-name">
+      <a href="{{ url_for('routes.homepage') }}" style="text-decoration: none; color: inherit;">
+        DESCONTOS & ACHADINHOS VIP
+      </a>
+    </div>
+
+    <div class="header-buttons">
+      <a class="social-icon" href="https://chat.whatsapp.com/IVGN98jifhM3SfIJWXm4Hr" target="_blank" title="WhatsApp">
+        <img src="{{ url_for('static', filename='ico/zap.ico') }}" alt="WhatsApp" class="icon-img">
+      </a>
+      <a class="social-icon" href="https://www.instagram.com/seu-perfil" target="_blank" title="Instagram">
+        <img src="{{ url_for('static', filename='ico/insta.ico') }}" alt="Instagram" class="icon-img">
+      </a>
+
+      {% if request.endpoint == 'routes.homepage' %}
+        <a class="login-button" href="/login">🔐 Login</a>
+      {% else %}
+        <a class="login-button" href="/logout">🔓 Logoff</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <!-- Conteúdo específico da página -->
+  {% block content %}
+  {% endblock %}
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 - SuperOfertas RN. Ofertas exclusivas para membros do grupo WhatsApp.</p>
+  </footer>
+</body>
+</html>

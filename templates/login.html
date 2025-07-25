@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - SuperOfertas RN{% endblock %}
+
+{% block content %}
+  <div style="display: flex; justify-content: center; align-items: center; min-height: 80vh;">
+    <div class="login-box" style="width: 100%; max-width: 400px;">
+      <h2 style="text-align: center; margin-bottom: 20px;">🚪 Entrar no Painel</h2>
+      <form action="/login" method="post">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+        <button type="submit">Acessar</button>
+      </form>
+
+      <div style="text-align: center; margin-top: 15px; font-size: 14px;">
+        <p>🔒 Suas credenciais estão seguras. Nenhuma informação é compartilhada.</p>
+        <p><a href="#" style="color: #25D366; text-decoration: underline;">Esqueceu a senha?</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

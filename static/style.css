@@ -1,0 +1,379 @@
+/* Reset geral */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+/* Cabeçalho superior */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.site-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #25D366;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.login-button {
+  background-color: #25D366;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #1DA851;
+}
+
+.social-icon {
+  font-size: 20px;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  color: white;
+}
+
+.social-icon.whatsapp {
+  background-color: #25D366;
+}
+
+.social-icon.instagram {
+  background-color: #E1306C;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Seção de boas-vindas */
+.welcome {
+  background-color: #f0f4f8; /* cor suave e clara */
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.welcome h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.welcome p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+.cta-button {
+  background-color: white;
+  color: #25D366;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* Seções de produtos */
+.highlight, .more-products {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.highlight h2, .more-products h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Seção de chamada final */
+.join-now {
+  background-color: #e1f8ec;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.join-now h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.join-now p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+
+.icon-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.icon-img:hover {
+  transform: scale(1.2);
+}
+/*Login*/
+.login-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  font-size: 24px;
+  color: #25D366;
+}
+
+.login-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  background-color: #25D366;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #1DA851;
+}
+/*Responsividade*/
+@media (max-width: 500px) {
+  .login-box {
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .site-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+/*tamnaho do card*/
+
+.item {
+  width: 200px;              /* Tamanho fixo da largura */
+  height: 300px;             /* Tamanho fixo da altura */
+  overflow: hidden;          /* Evita que conteúdo ultrapasse */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+}
+
+.item img {
+  width: 100%;
+  height: 150px;             /* Imagem com altura fixa */
+  object-fit: cover;         /* Corta ou redimensiona mantendo o aspecto */
+  border-radius: 4px;
+}
+
+.card-dashboard {
+  width: 260px;
+  height: 380px;
+  background: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  text-align: center;
+}
+
+.card-dashboard img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Exemplo de botão posicionado corretamente */
+.card-dashboard .botao-editar {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/*Pagina de alterar produto*/
+.edit-produto-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.edit-produto-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.edit-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.edit-form input[type="text"],
+.edit-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.edit-form textarea {
+  resize: vertical;
+}
+
+.edit-form .destaque {
+  margin-top: 10px;
+}
+
+.edit-form .cta-button {
+  display: block;
+  width: 100%;
+  background-color: #25D366;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-form .cta-button:hover {
+  background-color: #1DA955;
+}
