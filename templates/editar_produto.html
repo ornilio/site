@@ -6,7 +6,14 @@
   <section class="edit-produto-container">
     <h2>✏️ Editar Produto</h2>
 
-    <form method="POST" action="{{ url_for('routes.atualizar_produto', id=produto.id) }}" class="edit-form">
+    <!-- Botão de retorno -->
+    <div class="dashboard-button-container">
+      <a href="{{ url_for('routes.dashboard') }}" class="cta-button" style="margin-bottom: 20px;">
+        ⬅️ Voltar ao Painel
+      </a>
+    </div>
+
+    <form method="POST" action="{{ url_for('routes.atualizar_produto', id=produto.id) }}" enctype="multipart/form-data" class="edit-form">
       <div class="form-group">
         <label for="nome">🛍️ Nome do Produto</label>
         <input type="text" id="nome" name="nome" value="{{ produto.nome }}" required>
@@ -18,8 +25,13 @@
       </div>
 
       <div class="form-group">
-        <label for="imagem_url">🖼️ URL da Imagem</label>
+        <label for="imagem_url">🔗 URL da Imagem Atual</label>
         <input type="text" id="imagem_url" name="imagem_url" value="{{ produto.imagem_url }}">
+      </div>
+
+      <div class="form-group">
+        <label for="imagem_file">🖼️ Enviar Nova Imagem</label>
+        <input type="file" id="imagem_file" name="imagem_file" accept="image/*">
       </div>
 
       <div class="form-group destaque">
